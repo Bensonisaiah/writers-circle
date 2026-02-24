@@ -15,19 +15,23 @@ import Blog from './Pages/Blog.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Session from './Pages/Session.jsx';
 import FAQ from './Pages/FAQ.jsx';
+import ScrollToTop from './Components/ScrollToTop.jsx';
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    
+    <>
+      <ScrollToTop />
       <Routes>
+        
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
         <Route path="/sessions" element={<Session />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/faq" element={<FAQ />} />
       </Routes>
+    </>
   )
 }
 
