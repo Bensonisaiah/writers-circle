@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 import { ChevronLeft, ChevronRight, Home, Users, Map, Gift } from "lucide-react";
 
@@ -73,6 +73,15 @@ function Offer() {
   // const handleNext = () => {
   //   setCurrentOffer((prev) => (prev === offers.length - 1 ? 0 : prev + 1));
   // };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 3000); // 3000ms = 3 seconds
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
 
